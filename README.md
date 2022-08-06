@@ -18,6 +18,7 @@ NetworkService(Request/Reponse) <=> DataProvider <=> Coordinator <=> ViewModelPr
 
 ## How to run my project
 Running with XCode 13.4.1 simulator or the real device (iOS 13+)
+
 Select collection view item / click right bottom button will both open detail page
 
 ## Focus Areas
