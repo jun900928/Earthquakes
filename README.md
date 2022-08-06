@@ -3,6 +3,7 @@ Candidate: Mingjun lei
 
 ## Architectural 
 Coordinator + MVVM
+
 NetworkService(Request/Reponse) <=> DataProvider <=> Coordinator <=> ViewModelProvider/ViewCotroller <=> ViewModel <=> View
 
 ## Features Support
