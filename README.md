@@ -4,7 +4,7 @@ Candidate: Mingjun lei
 ## Architectural 
 Coordinator + MVVM
 
-NetworkService(Request/Reponse) <=> DataProvider <=> Coordinator <=> ViewModelProvider/ViewCotroller <=> ViewModel <=> View
+NetworkService(Request/Reponse) <=> RemoteDataProvider <=> Coordinator <=> ViewCotroller/DataProvider&ViewModelProvider <=> ViewModel <=> View
 
 ## Features Support
 * iPhone and iPad are compatible.
