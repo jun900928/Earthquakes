@@ -6,6 +6,23 @@
 //
 
 import Foundation
+
+/// view model for rendering EarthquakeCollectionViewCell UI
+protocol EarthquakeCollectionViewCellViewModel {
+    
+    var imageName: String? { get }
+    
+    var title: String? { get }
+    
+    var subtile: String? { get }
+    
+    var detail: String? { get }
+    
+    var leftBottom: String? { get }
+    
+    var rightButtonTitle: String? { get }
+}
+
 extension EarthquakesFeature: EarthquakeCollectionViewCellViewModel {
     
     var imageName: String? {

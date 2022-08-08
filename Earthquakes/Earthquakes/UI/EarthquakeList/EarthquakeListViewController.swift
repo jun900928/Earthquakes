@@ -11,7 +11,7 @@ class EarthquakeListViewController: UIViewController {
     
     weak var coordinator: EarthquakeListCoordinator?
     
-    let dataModelProvider: EarthquakeCollectionViewDataModelProvider
+    let dataModelProvider: EarthquakeListCollectionViewDataModelProvider
     
     lazy var refreshButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
@@ -57,8 +57,8 @@ class EarthquakeListViewController: UIViewController {
         return ds
     }()
     
-    init(_ remoteDataProvider: EarthquakesListRemoteDataProvider, coordinator: EarthquakeListCoordinator?) {
-        self.dataModelProvider = EarthquakeCollectionViewDataModelProvider(remoteDataProvider, coordinator: coordinator)
+    init(_ remoteDataProvider: EarthquakesListViewModelRemoteDataProvider, coordinator: EarthquakeListCoordinator?) {
+        self.dataModelProvider = EarthquakeListCollectionViewDataModelProvider(remoteDataProvider, coordinator: coordinator)
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -99,7 +99,6 @@ class EarthquakeListViewController: UIViewController {
 
 
 extension EarthquakeListViewController {
-    
     /// refresh / update  the data
     @objc func refreshData(){
         beginRefreshing()
@@ -111,7 +110,7 @@ extension EarthquakeListViewController {
             switch result {
             case .success(_):
                 self.collectionView.reloadData()
-                self.title = self.dataModelProvider.dataProvider.getTitle()
+                self.title = self.dataModelProvider.remoteDataProvider.getTitle()
             case .failure(let error):
                 self.coordinator?.errorHandling(error, on: self.view)
             }
@@ -134,7 +133,7 @@ extension EarthquakeListViewController {
         if let required = required {
             refreshButton.isHidden = required
         }else{
-            guard let features = dataModelProvider.dataProvider.getFeatures() else {
+            guard let features = dataModelProvider.remoteDataProvider.getFeatures() else {
                 refreshButton.isHidden = false
                 return
             }

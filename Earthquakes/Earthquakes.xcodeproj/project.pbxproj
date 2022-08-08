@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		9C0012E82895BA7400354DD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012E72895BA7400354DD4 /* Coordinator.swift */; };
 		9C0012EA2895BA9C00354DD4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012E92895BA9C00354DD4 /* AppCoordinator.swift */; };
-		9C0012EF2895BB6500354DD4 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012EE2895BB6500354DD4 /* DataProvider.swift */; };
-		9C0012F32895BBF400354DD4 /* EarthquakesListRemoteDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012F22895BBF400354DD4 /* EarthquakesListRemoteDataProvider.swift */; };
+		9C0012EF2895BB6500354DD4 /* EarthquakesListRemoteDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012EE2895BB6500354DD4 /* EarthquakesListRemoteDataProvider.swift */; };
+		9C0012F32895BBF400354DD4 /* EarthquakesListViewModelRemoteDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012F22895BBF400354DD4 /* EarthquakesListViewModelRemoteDataProvider.swift */; };
 		9C0012F82895C87F00354DD4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012F72895C87F00354DD4 /* UIView+Constraints.swift */; };
 		9C0012FA2895CB7100354DD4 /* EarthquakeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012F92895CB7100354DD4 /* EarthquakeListCoordinator.swift */; };
-		9C0012FC2895CE4C00354DD4 /* EarthquakesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012FB2895CE4C00354DD4 /* EarthquakesDataModel.swift */; };
+		9C0012FC2895CE4C00354DD4 /* EarthquakeDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0012FB2895CE4C00354DD4 /* EarthquakeDataModels.swift */; };
 		9C0013012895D0CE00354DD4 /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0013002895D0CE00354DD4 /* DateFormatter+Format.swift */; };
 		9C0013032895D1E800354DD4 /* Date+Computing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0013022895D1E800354DD4 /* Date+Computing.swift */; };
 		9C0013072895D71300354DD4 /* ServiceUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0013062895D71300354DD4 /* ServiceUrlBuilder.swift */; };
@@ -30,7 +30,12 @@
 		9C3A7EA22899E7A000D18C72 /* CalculateSelfHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A7EA12899E7A000D18C72 /* CalculateSelfHeight.swift */; };
 		9C3A7EA4289A003000D18C72 /* EarthquakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A7EA3289A002F00D18C72 /* EarthquakeDetailViewController.swift */; };
 		9C3A7EAA289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A7EA9289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift */; };
-		9CCA289C289A5D0D00AC854C /* EarthquakeCollectionViewDataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA289B289A5D0D00AC854C /* EarthquakeCollectionViewDataModelProvider.swift */; };
+		9C7C020A28A0D82B007DBA5E /* UIBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C020928A0D82B007DBA5E /* UIBaseCoordinator.swift */; };
+		9C7C020C28A0D84C007DBA5E /* EarthquakeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C020B28A0D84C007DBA5E /* EarthquakeDetailCoordinator.swift */; };
+		9C7C020F28A0F14A007DBA5E /* EarthquakeCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C020E28A0F14A007DBA5E /* EarthquakeCellDataModel.swift */; };
+		9C7C021128A0F186007DBA5E /* EarthquakeCellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C021028A0F186007DBA5E /* EarthquakeCellActions.swift */; };
+		9C7C021428A0F364007DBA5E /* EarthquakesListViewModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C021328A0F364007DBA5E /* EarthquakesListViewModelProvider.swift */; };
+		9CCA289C289A5D0D00AC854C /* EarthquakeListCollectionViewDataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA289B289A5D0D00AC854C /* EarthquakeListCollectionViewDataModelProvider.swift */; };
 		9CD2A75D289D9AE50078BC38 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2A75C289D9AE50078BC38 /* ToastView.swift */; };
 		9CD2A75F289DD8AC0078BC38 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2A75E289DD8AC0078BC38 /* NetworkError.swift */; };
 		9CD2A761289DD9190078BC38 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2A760289DD9190078BC38 /* HTTPStatusCode.swift */; };
@@ -43,11 +48,11 @@
 /* Begin PBXFileReference section */
 		9C0012E72895BA7400354DD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9C0012E92895BA9C00354DD4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		9C0012EE2895BB6500354DD4 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		9C0012F22895BBF400354DD4 /* EarthquakesListRemoteDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesListRemoteDataProvider.swift; sourceTree = "<group>"; };
+		9C0012EE2895BB6500354DD4 /* EarthquakesListRemoteDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesListRemoteDataProvider.swift; sourceTree = "<group>"; };
+		9C0012F22895BBF400354DD4 /* EarthquakesListViewModelRemoteDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesListViewModelRemoteDataProvider.swift; sourceTree = "<group>"; };
 		9C0012F72895C87F00354DD4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		9C0012F92895CB7100354DD4 /* EarthquakeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeListCoordinator.swift; sourceTree = "<group>"; };
-		9C0012FB2895CE4C00354DD4 /* EarthquakesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesDataModel.swift; sourceTree = "<group>"; };
+		9C0012FB2895CE4C00354DD4 /* EarthquakeDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDataModels.swift; sourceTree = "<group>"; };
 		9C0013002895D0CE00354DD4 /* DateFormatter+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 		9C0013022895D1E800354DD4 /* Date+Computing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Computing.swift"; sourceTree = "<group>"; };
 		9C0013062895D71300354DD4 /* ServiceUrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUrlBuilder.swift; sourceTree = "<group>"; };
@@ -66,7 +71,12 @@
 		9C3A7EA12899E7A000D18C72 /* CalculateSelfHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateSelfHeight.swift; sourceTree = "<group>"; };
 		9C3A7EA3289A002F00D18C72 /* EarthquakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetailViewController.swift; sourceTree = "<group>"; };
 		9C3A7EA9289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeListCollectionViewDataModel.swift; sourceTree = "<group>"; };
-		9CCA289B289A5D0D00AC854C /* EarthquakeCollectionViewDataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeCollectionViewDataModelProvider.swift; sourceTree = "<group>"; };
+		9C7C020928A0D82B007DBA5E /* UIBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseCoordinator.swift; sourceTree = "<group>"; };
+		9C7C020B28A0D84C007DBA5E /* EarthquakeDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetailCoordinator.swift; sourceTree = "<group>"; };
+		9C7C020E28A0F14A007DBA5E /* EarthquakeCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeCellDataModel.swift; sourceTree = "<group>"; };
+		9C7C021028A0F186007DBA5E /* EarthquakeCellActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeCellActions.swift; sourceTree = "<group>"; };
+		9C7C021328A0F364007DBA5E /* EarthquakesListViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesListViewModelProvider.swift; sourceTree = "<group>"; };
+		9CCA289B289A5D0D00AC854C /* EarthquakeListCollectionViewDataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeListCollectionViewDataModelProvider.swift; sourceTree = "<group>"; };
 		9CD2A75C289D9AE50078BC38 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9CD2A75E289DD8AC0078BC38 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9CD2A760289DD9190078BC38 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
@@ -91,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				9C0012E72895BA7400354DD4 /* Coordinator.swift */,
+				9C7C020928A0D82B007DBA5E /* UIBaseCoordinator.swift */,
 				9C0012E92895BA9C00354DD4 /* AppCoordinator.swift */,
 				9C0012F92895CB7100354DD4 /* EarthquakeListCoordinator.swift */,
+				9C7C020B28A0D84C007DBA5E /* EarthquakeDetailCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -100,10 +112,9 @@
 		9C0012EB2895BB0400354DD4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9C0013052895D6F700354DD4 /* Service */,
-				9C0012FF2895D0BA00354DD4 /* Helper */,
-				9C0012ED2895BB2B00354DD4 /* Models */,
+				9C0012ED2895BB2B00354DD4 /* DataModels */,
 				9C0012EC2895BB1D00354DD4 /* DataProvider */,
+				9C0012FF2895D0BA00354DD4 /* Helper */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -111,27 +122,28 @@
 		9C0012EC2895BB1D00354DD4 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				9C0012EE2895BB6500354DD4 /* DataProvider.swift */,
-				9C0012F22895BBF400354DD4 /* EarthquakesListRemoteDataProvider.swift */,
+				9C7C021328A0F364007DBA5E /* EarthquakesListViewModelProvider.swift */,
+				9C0012EE2895BB6500354DD4 /* EarthquakesListRemoteDataProvider.swift */,
+				9C0012F22895BBF400354DD4 /* EarthquakesListViewModelRemoteDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
 		};
-		9C0012ED2895BB2B00354DD4 /* Models */ = {
+		9C0012ED2895BB2B00354DD4 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				9C0012FB2895CE4C00354DD4 /* EarthquakesDataModel.swift */,
+				9C0012FB2895CE4C00354DD4 /* EarthquakeDataModels.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		9C0012F42895BC3500354DD4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9CD2A75B289D9ACA0078BC38 /* UIView */,
-				9C0012F62895C80400354DD4 /* Helper */,
 				9C0012F52895C12F00354DD4 /* EarthquakeList */,
 				9C3A7EA6289A005200D18C72 /* EarthquakeDetail */,
+				9C0012F62895C80400354DD4 /* Helper */,
+				9CD2A75B289D9ACA0078BC38 /* UIView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -139,11 +151,11 @@
 		9C0012F52895C12F00354DD4 /* EarthquakeList */ = {
 			isa = PBXGroup;
 			children = (
-				9CCA289D289A6B3000AC854C /* Cell */,
-				9CCA289E289A6B6900AC854C /* DataModel */,
-				9C00B39C28950E7000140522 /* EarthquakeListViewController.swift */,
+				9C7C020D28A0EF2B007DBA5E /* DataModelAndProvider */,
 				9C0013082895E62500354DD4 /* EarthquakeListViewControllerDataSource.swift */,
 				9CFE100528960CBF000A3F4E /* EarthquakeListViewControllerDelegate.swift */,
+				9C00B39C28950E7000140522 /* EarthquakeListViewController.swift */,
+				9CCA289D289A6B3000AC854C /* Cell */,
 			);
 			path = EarthquakeList;
 			sourceTree = "<group>";
@@ -168,7 +180,7 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		9C0013052895D6F700354DD4 /* Service */ = {
+		9C0013052895D6F700354DD4 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				9C0013062895D71300354DD4 /* ServiceUrlBuilder.swift */,
@@ -177,7 +189,7 @@
 				9CD2A75E289DD8AC0078BC38 /* NetworkError.swift */,
 				9CD2A760289DD9190078BC38 /* HTTPStatusCode.swift */,
 			);
-			path = Service;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		9C00B38C28950E7000140522 = {
@@ -199,13 +211,11 @@
 		9C00B39728950E7000140522 /* Earthquakes */ = {
 			isa = PBXGroup;
 			children = (
+				9C7C021228A0F2D7007DBA5E /* App */,
 				9C0012F42895BC3500354DD4 /* UI */,
 				9C0012EB2895BB0400354DD4 /* Data */,
+				9C0013052895D6F700354DD4 /* NetworkService */,
 				9C0012E62895BA5B00354DD4 /* Coordinators */,
-				9C00B39828950E7000140522 /* AppDelegate.swift */,
-				9C00B39A28950E7000140522 /* SceneDelegate.swift */,
-				9C00B3A128950E7200140522 /* Assets.xcassets */,
-				9C00B3A328950E7200140522 /* LaunchScreen.storyboard */,
 				9C00B3A628950E7200140522 /* Info.plist */,
 			);
 			path = Earthquakes;
@@ -219,23 +229,44 @@
 			path = EarthquakeDetail;
 			sourceTree = "<group>";
 		};
+		9C7C020D28A0EF2B007DBA5E /* DataModelAndProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A7EA9289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift */,
+				9CCA289B289A5D0D00AC854C /* EarthquakeListCollectionViewDataModelProvider.swift */,
+			);
+			path = DataModelAndProvider;
+			sourceTree = "<group>";
+		};
+		9C7C021228A0F2D7007DBA5E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9C00B39828950E7000140522 /* AppDelegate.swift */,
+				9C00B39A28950E7000140522 /* SceneDelegate.swift */,
+				9C00B3A128950E7200140522 /* Assets.xcassets */,
+				9C00B3A328950E7200140522 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		9CCA289D289A6B3000AC854C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9C00130A2895EB5900354DD4 /* EarthquakeCollectionViewCell.swift */,
 				9C15579C2897CA23004E5DB0 /* RefreshCollectionViewCell.swift */,
+				9CCA289E289A6B6900AC854C /* EarthquakeCollectionViewCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		9CCA289E289A6B6900AC854C /* DataModel */ = {
+		9CCA289E289A6B6900AC854C /* EarthquakeCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9C00130A2895EB5900354DD4 /* EarthquakeCollectionViewCell.swift */,
 				9C15579A2897B510004E5DB0 /* EarthquakeCollectionViewCellDataModel.swift */,
-				9C3A7EA9289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift */,
-				9CCA289B289A5D0D00AC854C /* EarthquakeCollectionViewDataModelProvider.swift */,
+				9C7C021028A0F186007DBA5E /* EarthquakeCellActions.swift */,
+				9C7C020E28A0F14A007DBA5E /* EarthquakeCellDataModel.swift */,
 			);
-			path = DataModel;
+			path = EarthquakeCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		9CD2A75B289D9ACA0078BC38 /* UIView */ = {
@@ -316,28 +347,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCA289C289A5D0D00AC854C /* EarthquakeCollectionViewDataModelProvider.swift in Sources */,
+				9CCA289C289A5D0D00AC854C /* EarthquakeListCollectionViewDataModelProvider.swift in Sources */,
 				9CD2A75F289DD8AC0078BC38 /* NetworkError.swift in Sources */,
 				9CFE100A289675F5000A3F4E /* QueryRequest.swift in Sources */,
-				9C0012EF2895BB6500354DD4 /* DataProvider.swift in Sources */,
+				9C0012EF2895BB6500354DD4 /* EarthquakesListRemoteDataProvider.swift in Sources */,
+				9C7C020A28A0D82B007DBA5E /* UIBaseCoordinator.swift in Sources */,
 				9C0012E82895BA7400354DD4 /* Coordinator.swift in Sources */,
 				9C15579B2897B510004E5DB0 /* EarthquakeCollectionViewCellDataModel.swift in Sources */,
 				9C0013072895D71300354DD4 /* ServiceUrlBuilder.swift in Sources */,
 				9C00130B2895EB5900354DD4 /* EarthquakeCollectionViewCell.swift in Sources */,
 				9C3A7EA4289A003000D18C72 /* EarthquakeDetailViewController.swift in Sources */,
 				9CD2A75D289D9AE50078BC38 /* ToastView.swift in Sources */,
+				9C7C021428A0F364007DBA5E /* EarthquakesListViewModelProvider.swift in Sources */,
 				9C00B39D28950E7000140522 /* EarthquakeListViewController.swift in Sources */,
 				9C0012F82895C87F00354DD4 /* UIView+Constraints.swift in Sources */,
 				9CFE100C289732CD000A3F4E /* CellIdentifierProvider.swift in Sources */,
-				9C0012FC2895CE4C00354DD4 /* EarthquakesDataModel.swift in Sources */,
+				9C7C020F28A0F14A007DBA5E /* EarthquakeCellDataModel.swift in Sources */,
+				9C0012FC2895CE4C00354DD4 /* EarthquakeDataModels.swift in Sources */,
 				9C0012EA2895BA9C00354DD4 /* AppCoordinator.swift in Sources */,
 				9C3A7E9E2899E31F00D18C72 /* CGFloat + Layout.swift in Sources */,
 				9C0013092895E62500354DD4 /* EarthquakeListViewControllerDataSource.swift in Sources */,
+				9C7C021128A0F186007DBA5E /* EarthquakeCellActions.swift in Sources */,
 				9C3A7EA22899E7A000D18C72 /* CalculateSelfHeight.swift in Sources */,
 				9C3A7EAA289A308300D18C72 /* EarthquakeListCollectionViewDataModel.swift in Sources */,
+				9C7C020C28A0D84C007DBA5E /* EarthquakeDetailCoordinator.swift in Sources */,
 				9C15579D2897CA23004E5DB0 /* RefreshCollectionViewCell.swift in Sources */,
 				9CFE100628960CBF000A3F4E /* EarthquakeListViewControllerDelegate.swift in Sources */,
-				9C0012F32895BBF400354DD4 /* EarthquakesListRemoteDataProvider.swift in Sources */,
+				9C0012F32895BBF400354DD4 /* EarthquakesListViewModelRemoteDataProvider.swift in Sources */,
 				9C0012FA2895CB7100354DD4 /* EarthquakeListCoordinator.swift in Sources */,
 				9C0013032895D1E800354DD4 /* Date+Computing.swift in Sources */,
 				9CD2A761289DD9190078BC38 /* HTTPStatusCode.swift in Sources */,

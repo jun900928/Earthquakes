@@ -161,6 +161,7 @@ extension EarthquakeCollectionViewCell {
 }
 
 extension EarthquakeCollectionViewCell: CalculateSelfHeight {
+    
     func calculateHieght(width: CGFloat) -> CGFloat {
         var resultingHeight: CGFloat = 0
         let width = width - contentView.layoutMargins.left  - contentView.layoutMargins.right

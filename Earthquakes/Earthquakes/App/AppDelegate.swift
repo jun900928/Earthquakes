@@ -20,9 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupUI() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        appCoordinator = AppCoordinator(window: window, dataProvider: EarthquakesListRemoteDataProvider())
+        appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
         window?.makeKeyAndVisible()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        appCoordinator?.finish()
     }
 }
 

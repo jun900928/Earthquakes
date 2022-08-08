@@ -9,11 +9,11 @@ import UIKit
 
 class EarthquakeListViewControllerDataSource: NSObject {
     
-    let dataModelProvider: EarthquakeDataModelProvider
+    let dataModelProvider: EarthquakeCollectionViewDataModelProvider
     //copy of data in case reponse change in the middle
     var copyDataModels: [EarthquakeCellDataModel] = []
     
-    init(_ dataModelProvider: EarthquakeDataModelProvider) {
+    init(_ dataModelProvider: EarthquakeCollectionViewDataModelProvider) {
         self.dataModelProvider = dataModelProvider
     }
 }

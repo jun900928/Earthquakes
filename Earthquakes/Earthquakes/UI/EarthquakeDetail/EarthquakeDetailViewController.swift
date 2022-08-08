@@ -9,9 +9,10 @@ import UIKit
 import WebKit
 
 class EarthquakeDetailViewController: UIViewController {
+    
     let url: URL?
     
-    weak var coordinator: EarthquakeListCoordinator?
+    weak var coordinator: EarthquakeDetailCoordinator?
     
     lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
@@ -20,7 +21,7 @@ class EarthquakeDetailViewController: UIViewController {
         return webView
     }()
     
-    init(_ url: URL?, coordinator: EarthquakeListCoordinator) {
+    init(_ url: URL?, coordinator: EarthquakeDetailCoordinator) {
         self.url = url
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
@@ -35,7 +36,17 @@ class EarthquakeDetailViewController: UIViewController {
         setupUI()
     }
     
-    func setupUI() {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            coordinator?.finish()
+        }
+    }
+}
+
+extension EarthquakeDetailViewController {
+    
+    private func setupUI() {
         view.backgroundColor = .systemBackground
         view.addSubview(webView)
         webView.constrainToSuperviewSafeAreaLayoutGuide()

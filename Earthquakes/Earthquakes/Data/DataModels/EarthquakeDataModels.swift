@@ -1,5 +1,5 @@
 //
-//  EarthquakesDataModel.swift
+//  EarthquakeDataModels.swift
 //  Earthquakes
 //
 //  Created by Mingjun Lei on 7/30/22.

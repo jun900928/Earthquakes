@@ -7,31 +7,34 @@
 
 import UIKit
 
-class EarthquakeListCoordinator: Coordinator {
+class EarthquakeListCoordinator: UIBaseCoordinator {
     
-    var navigationController: UINavigationController
-    var children = [Coordinator]()
+    var dataProvider: EarthquakesListRemoteDataProvider
     
-    var dataProvider: RemoteDataProvider
-    
-    init(navigationController: UINavigationController, dataProvider: RemoteDataProvider) {
-        self.navigationController = navigationController
+    init(navigationController: UINavigationController, dataProvider: EarthquakesListRemoteDataProvider) {
         self.dataProvider = dataProvider
+        
+        super.init()
+        self.navigationController = navigationController
     }
     
-    func start() {
-        guard let dataProvider = dataProvider as? EarthquakesListRemoteDataProvider else { return }
+    override func start() {
+        super.start()
+        guard let dataProvider = dataProvider as? EarthquakesListViewModelRemoteDataProvider else { return }
         let vc = EarthquakeListViewController(dataProvider, coordinator: self)
         navigationController.viewControllers = [vc]
     }
+}
+
+extension EarthquakeListCoordinator {
     
     func openDetailWebview(urlStr: String?) {
-        guard let urlStr = urlStr else { return }
-        let url = URL.init(string: urlStr)
-        let vc = EarthquakeDetailViewController(url, coordinator: self)
-        navigationController.pushViewController(vc, animated: true)
+        let coordinator = EarthquakeDetailCoordinator(navigationController: navigationController, url: urlStr)
+        addChild(coordinator)
+        coordinator.start()
     }
     
+    /// show error msg on view
     func errorHandling(_ error: Error, on view: UIView?) {
         let message = (error as? NetworkError)?.localizedDescription ?? error.localizedDescription
         let toast = ToastView.init()

@@ -8,11 +8,14 @@
 import UIKit
 
 protocol Refresher {
+    
     func beginRefreshing()
+
     func endRefreshing()
 }
 
 class RefreshCollectionViewCell: UICollectionViewCell, CellIdentifierProvider{
+    
     lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +48,9 @@ extension RefreshCollectionViewCell: Refresher {
 }
 
 extension RefreshCollectionViewCell: CalculateSelfHeight {
+    
     func calculateHieght(width: CGFloat) -> CGFloat {
         return .defaultCellHeight
     }
+    
 }

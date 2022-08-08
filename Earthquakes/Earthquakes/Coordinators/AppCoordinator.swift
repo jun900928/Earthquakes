@@ -6,23 +6,25 @@
 //
 
 import UIKit
-class AppCoordinator: Coordinator {
 
-    var navigationController: UINavigationController
-    var children = [Coordinator]()
+/// App Coordinator than will control the app flow
+class AppCoordinator: UIBaseCoordinator {
     
-    var dataProvider: DataProvider
-    
-    init(window: UIWindow?, dataProvider: DataProvider) {
-        self.dataProvider = dataProvider
-        navigationController = UINavigationController()
+    init(window: UIWindow?) {
+        super.init()
         window?.rootViewController = navigationController
     }
 
-    func start() {
+    override func start() {
+        super.start()
         let earthquakeListCoordinator = EarthquakeListCoordinator(navigationController: navigationController,
-                                                                  dataProvider: EarthquakesListRemoteDataProvider())
+                                                                  dataProvider: EarthquakesListViewModelRemoteDataProvider())
         addChild(earthquakeListCoordinator)
         earthquakeListCoordinator.start()
+    }
+    
+    override func finish() {
+        children.forEach({$0.finish()})
+        super.finish()
     }
 }

@@ -8,10 +8,12 @@
 import UIKit
 
 class EarthquakeListCollectionViewDelegateFlowLayout: NSObject {
-    let dataModelProvider: EarthquakeDataModelProvider
+    
+    let dataModelProvider: EarthquakeCollectionViewDataModelProvider
+    
     let coordinator: EarthquakeListCoordinator?
     
-    init(_ dataModelProvider: EarthquakeDataModelProvider,
+    init(_ dataModelProvider: EarthquakeCollectionViewDataModelProvider,
          coordinator: EarthquakeListCoordinator?) {
         self.dataModelProvider = dataModelProvider
         self.coordinator = coordinator
@@ -19,6 +21,7 @@ class EarthquakeListCollectionViewDelegateFlowLayout: NSObject {
 }
  
 extension EarthquakeListCollectionViewDelegateFlowLayout: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard indexPath.row <= dataModelProvider.dataModels.count else { return }
         dataModelProvider.dataModels[indexPath.row].actionModel.didSelectItem()
@@ -69,8 +72,7 @@ extension EarthquakeListCollectionViewDelegateFlowLayout: UICollectionViewDelega
         return UIEdgeInsets(top: .zero, left: edgeInsets, bottom: .zero, right: edgeInsets)
     }
     
-    
-    func referenceWidth(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewFlowLayout) -> CGFloat {
+    private func referenceWidth(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewFlowLayout) -> CGFloat {
         let maxWidth = 300.0
         let sectionInset = collectionViewLayout.sectionInset
         
