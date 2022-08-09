@@ -9,7 +9,7 @@ import Foundation
 
 struct EarthquakesResponse: Codable {
     var type: String?
-    var metadata: EarthquakesResponseMetaData
+    var metadata: EarthquakesResponseMetaData?
     var features: [EarthquakesFeature]?
 }
 

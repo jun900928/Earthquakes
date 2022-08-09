@@ -9,7 +9,7 @@ import Foundation
 
 fileprivate let timeoutIntervalForRequest = 5.0
 
-public class NetworkService {
+class NetworkService: Service {
     static let instance = NetworkService()
     var dataTask: URLSessionDataTask?
     
@@ -25,10 +25,10 @@ public class NetworkService {
     }
     
 
-    func queryResults<T: Decodable>(request: QueryRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func queryResults<T: Decodable>(request: Request, completion: @escaping (Result<T, Error>) -> Void) {
         dataTask?.cancel()
         guard let url = request.requestUrl() else {
-            completion(.failure(.badURL))
+            completion(.failure(NetworkError.badURL))
             return
         }
         dataTask = defaultSession.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
@@ -42,11 +42,11 @@ public class NetworkService {
     }
     
 
-    func parsing<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, NetworkError>) -> Void){
+    func parsing<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void){
         guard let data = data,
             let response = response as? HTTPURLResponse,
               response.statusCode == HTTPStatusCode.ok.rawValue else {
-            completion(.failure(.serverError))
+            completion(.failure(NetworkError.serverError))
             return
         }
         do {
@@ -54,7 +54,7 @@ public class NetworkService {
             completion(.success(response))
         } catch {
             print(error)
-            completion(.failure(.decodeFail))
+            completion(.failure(NetworkError.decodeFail))
         }
     }
 }

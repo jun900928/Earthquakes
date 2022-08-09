@@ -16,6 +16,12 @@ class EarthquakesListViewModelRemoteDataProvider {
     var config: QueryConfig?
     
     var isRefreshing = false
+    
+    let networkService: Service
+    
+    init(_ networkService: Service = NetworkService.instance) {
+        self.networkService = networkService
+    }
 }
 
 extension EarthquakesListViewModelRemoteDataProvider: EarthquakesListViewModelProvider {
@@ -29,7 +35,7 @@ extension EarthquakesListViewModelRemoteDataProvider: EarthquakesListViewModelPr
     }
     
     func getTitle() -> String? {
-        return response?.metadata.title
+        return response?.metadata?.title
     }
 }
 
@@ -54,8 +60,8 @@ extension EarthquakesListViewModelRemoteDataProvider: EarthquakesListRemoteDataP
     func requestNextPageRemoteData(completion: @escaping (EarthquakesResponseResult) -> Void) {
         guard isRefreshing == false else {return}
         guard let config = config,
-                let limit = response?.metadata.limit,
-                let count = response?.metadata.count,
+              let limit = response?.metadata?.limit,
+              let count = response?.metadata?.count,
                 limit == count else {
             completion(.failure(NetworkError.queryCondition))
             return
@@ -102,7 +108,7 @@ extension EarthquakesListViewModelRemoteDataProvider {
     // request remove data 
     private func requestRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void) {
         let request = QueryRequest.init(config: config)
-        NetworkService.instance.queryResults(request: request) { (_ result: Result<EarthquakesResponse, NetworkError>) in
+        self.networkService.queryResults(request: request) { (_ result: Result<EarthquakesResponse, Error>) in
             switch result {
             case .success(let resposne):
                 completion(.success(resposne))
