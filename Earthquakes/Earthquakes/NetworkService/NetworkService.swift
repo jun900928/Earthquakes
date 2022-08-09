@@ -19,6 +19,7 @@ public class NetworkService {
     private init() {
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = timeoutIntervalForRequest
+        sessionConfig.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         let session = URLSession(configuration: sessionConfig)
         self.defaultSession = session
     }

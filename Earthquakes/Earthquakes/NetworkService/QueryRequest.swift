@@ -30,7 +30,7 @@ struct QueryConfig {
         self.limit = limit
     }
     
-    func getQueryVaue(key: QueryItemName) -> String {
+    func getQueryVaue(key: QueryItemNames) -> String {
         switch key {
         case .format:
             return format

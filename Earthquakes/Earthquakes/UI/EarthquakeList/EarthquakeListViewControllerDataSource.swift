@@ -10,38 +10,41 @@ import UIKit
 class EarthquakeListViewControllerDataSource: NSObject {
     
     let dataModelProvider: EarthquakeCollectionViewDataModelProvider
-    //copy of data in case reponse change in the middle
-    var copyDataModels: [EarthquakeCellDataModel] = []
+    
+    private var dataModels: [EarthquakeCellDataModel] = []
     
     init(_ dataModelProvider: EarthquakeCollectionViewDataModelProvider) {
         self.dataModelProvider = dataModelProvider
+    }
+    
+    func updateDataModels() {
+        dataModels = dataModelProvider.dataModels
     }
 }
     
 extension EarthquakeListViewControllerDataSource: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        copyDataModels = dataModelProvider.dataModels
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !copyDataModels.isEmpty {
-            return copyDataModels.count + 1
+        if !dataModels.isEmpty {
+            return dataModels.count + 1
         }else {
             return 0
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == copyDataModels.count,
+        if indexPath.row == dataModels.count,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RefreshCollectionViewCell.cellID,
                                                           for: indexPath) as? RefreshCollectionViewCell {
             return cell
         }
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EarthquakeCollectionViewCell.cellID,
                                                          for: indexPath) as? EarthquakeCollectionViewCell {
-            cell.dataModel = copyDataModels[indexPath.row]
+            cell.dataModel = dataModels[indexPath.row]
             return cell
         }
         return UICollectionViewCell()

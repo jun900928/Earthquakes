@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum QueryItemName: String, CaseIterable {
+enum QueryItemNames: String, CaseIterable {
     case format, offset, limit, starttime, endtime
 }
 
@@ -20,7 +20,7 @@ class QueryServiceUrlBuilder {
         var urlComponents = URLComponents(string: host)
         urlComponents?.path = path
         var queryItems = [URLQueryItem]()
-        QueryItemName.allCases.forEach({ name in
+        QueryItemNames.allCases.forEach({ name in
             let value = configuration.getQueryVaue(key: name)
             let queryItem = URLQueryItem(name: name.rawValue, value: value)
             queryItems.append(queryItem)

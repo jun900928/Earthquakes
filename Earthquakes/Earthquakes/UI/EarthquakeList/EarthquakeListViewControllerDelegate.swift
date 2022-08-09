@@ -11,10 +11,10 @@ class EarthquakeListCollectionViewDelegateFlowLayout: NSObject {
     
     let dataModelProvider: EarthquakeCollectionViewDataModelProvider
     
-    let coordinator: EarthquakeListCoordinator?
+    let coordinator: EarthquakeListCoordinatorHandler?
     
     init(_ dataModelProvider: EarthquakeCollectionViewDataModelProvider,
-         coordinator: EarthquakeListCoordinator?) {
+         coordinator: EarthquakeListCoordinatorHandler?) {
         self.dataModelProvider = dataModelProvider
         self.coordinator = coordinator
     }

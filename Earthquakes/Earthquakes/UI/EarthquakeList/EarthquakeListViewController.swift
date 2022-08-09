@@ -9,7 +9,7 @@ import UIKit
 
 class EarthquakeListViewController: UIViewController {
     
-    weak var coordinator: EarthquakeListCoordinator?
+    weak var coordinator: EarthquakeListCoordinatorHandler?
     
     let dataModelProvider: EarthquakeListCollectionViewDataModelProvider
     
@@ -109,8 +109,9 @@ extension EarthquakeListViewController {
             guard let self = self else {return}
             switch result {
             case .success(_):
-                self.collectionView.reloadData()
                 self.title = self.dataModelProvider.remoteDataProvider.getTitle()
+                self.collectionViewDataSource.updateDataModels()
+                self.collectionView.reloadData()
             case .failure(let error):
                 self.coordinator?.errorHandling(error, on: self.view)
             }

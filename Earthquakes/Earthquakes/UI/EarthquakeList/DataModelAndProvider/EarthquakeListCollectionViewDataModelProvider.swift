@@ -9,7 +9,6 @@ import UIKit
 class EarthquakeListCollectionViewDataModelProvider  {
     let remoteDataProvider: EarthquakesListViewModelRemoteDataProvider
     weak var coordinator: EarthquakeListCoordinator?
-//    private var features: [EarthquakesFeature]?
 
     init(_ remoteDataProvider: EarthquakesListViewModelRemoteDataProvider, coordinator: EarthquakeListCoordinator?) {
         self.remoteDataProvider = remoteDataProvider
@@ -18,7 +17,7 @@ class EarthquakeListCollectionViewDataModelProvider  {
     
     private func openWebView(urlStr: String?) {
         guard let coordinator = coordinator else { return }
-        coordinator.openDetailWebview(urlStr: urlStr)
+        coordinator.openDetailView(urlStr: urlStr)
     }
 }
 

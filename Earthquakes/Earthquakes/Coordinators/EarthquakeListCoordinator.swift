@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol EarthquakeListCoordinatorHandler: AnyObject {
+    var dataProvider: EarthquakesListRemoteDataProvider {get}
+    func openDetailView(urlStr: String?)
+    func errorHandling(_ error: Error, on view: UIView?)
+}
+
 class EarthquakeListCoordinator: UIBaseCoordinator {
     
     var dataProvider: EarthquakesListRemoteDataProvider
@@ -26,9 +32,9 @@ class EarthquakeListCoordinator: UIBaseCoordinator {
     }
 }
 
-extension EarthquakeListCoordinator {
+extension EarthquakeListCoordinator: EarthquakeListCoordinatorHandler {
     
-    func openDetailWebview(urlStr: String?) {
+    func openDetailView(urlStr: String?) {
         let coordinator = EarthquakeDetailCoordinator(navigationController: navigationController, url: urlStr)
         addChild(coordinator)
         coordinator.start()
