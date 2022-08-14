@@ -6,6 +6,9 @@
 //
 
 import Foundation
+
+extension String: Error {} 
+
 enum NetworkError: Error {
     case badURL, serverError, decodeFail, queryCondition, unknown
     

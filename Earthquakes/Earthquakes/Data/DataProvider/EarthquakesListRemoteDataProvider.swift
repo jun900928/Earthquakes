@@ -11,7 +11,7 @@ typealias EarthquakesResponseResult = Result<EarthquakesResponse, Error>
 
 protocol EarthquakesListRemoteDataProvider {
     
-    func refreshRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void)
+    func refreshRemoteData(config: QueryConfig) async throws -> EarthquakesResponse
     
-    func requestNextPageRemoteData(completion: @escaping (EarthquakesResponseResult) -> Void)
+    func requestNextPageRemoteData() async throws -> EarthquakesResponse
 }

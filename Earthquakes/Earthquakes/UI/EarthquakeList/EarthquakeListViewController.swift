@@ -101,18 +101,17 @@ class EarthquakeListViewController: UIViewController {
 extension EarthquakeListViewController {
     /// refresh / update  the data
     @objc func refreshData(){
-        beginRefreshing()
-        let startTime = DateFormatter().formateData(date: Date.now.last30Days())
-        let endtime = DateFormatter().formateData(date: .now)
-        let config = QueryConfig.init(starttime: startTime, endtime: endtime, limit: pagesize)
-        dataModelProvider.dataProvider.refreshRemoteData(config: config) { [weak self] result in
-            guard let self = self else {return}
-            switch result {
-            case .success(_):
+        Task.init {
+            beginRefreshing()
+            let startTime = DateFormatter().formateData(date: Date.now.last30Days())
+            let endtime = DateFormatter().formateData(date: .now)
+            let config = QueryConfig.init(starttime: startTime, endtime: endtime, limit: pagesize)
+            do {
+                let _ = try await dataModelProvider.dataProvider.refreshRemoteData(config: config)
                 self.title = self.dataModelProvider.remoteDataProvider.getTitle()
                 self.collectionViewDataSource.updateDataModels()
                 self.collectionView.reloadData()
-            case .failure(let error):
+            } catch let error {
                 self.coordinator?.errorHandling(error, on: self.view)
             }
             self.endRefreshing()

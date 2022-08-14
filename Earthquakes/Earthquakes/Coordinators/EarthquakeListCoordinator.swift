@@ -42,7 +42,7 @@ extension EarthquakeListCoordinator: EarthquakeListCoordinatorHandler {
     
     /// show error msg on view
     func errorHandling(_ error: Error, on view: UIView?) {
-        let message = (error as? NetworkError)?.localizedDescription ?? error.localizedDescription
+        let message = (error as? NetworkError)?.localizedDescription ?? error as? String ?? error.localizedDescription
         let toast = ToastView.init()
         toast.showOn(view, message: message)
     }

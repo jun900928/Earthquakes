@@ -28,20 +28,19 @@ extension EarthquakeListCollectionViewDelegateFlowLayout: UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? Refresher {
-            cell.beginRefreshing()
-            dataModelProvider.dataProvider.requestNextPageRemoteData { [weak self] result in
-                cell.endRefreshing()
-                guard let self = self else { return }
-                switch result {
-                case .success(_):
+        Task.init {
+            if let cell = cell as? Refresher {
+                cell.beginRefreshing()
+                do {
+                    let _ = try await dataModelProvider.dataProvider.requestNextPageRemoteData()
                     if let dataSource = collectionView.dataSource as? DataUpdatable {
                         dataSource.updateDataModels()
                         collectionView.reloadData()
                     }
-                case.failure(let error):
+                }catch let error {
                     self.coordinator?.errorHandling(error, on: collectionView.superview)
                 }
+                cell.endRefreshing()
             }
         }
     }

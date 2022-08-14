@@ -41,49 +41,52 @@ extension EarthquakesListViewModelRemoteDataProvider: EarthquakesListViewModelPr
 }
 
 extension EarthquakesListViewModelRemoteDataProvider: EarthquakesListRemoteDataProvider{
-    
     ///make a new query to fetch the data base on now
-    func refreshRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void) {
-        requestRemoteData(config: config) {[weak self]  result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let response):
-                self.config = config
-                self.response = response
-                completion(.success(response))
-            case .failure(let error):
-                completion(.failure(error))
+    ///
+    @MainActor
+    func refreshRemoteData(config: QueryConfig) async throws -> EarthquakesResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            Task.init {
+                do {
+                    let response = try await requestRemoteData(config: config)
+                    self.config = config
+                    self.response = response
+                    continuation.resume(with: .success(response))
+                } catch let error {
+                    continuation.resume(with: .failure(error))
+                }
             }
-       }
+        }
     }
     
     /// query for next page of data base on current QueryConfig
-    func requestNextPageRemoteData(completion: @escaping (EarthquakesResponseResult) -> Void) {
-        guard isRefreshing == false else {return}
-        guard let config = config,
-              let limit = response?.metadata?.limit,
-              let count = response?.metadata?.count,
-                limit == count else {
-            completion(.failure(NetworkError.queryCondition))
-            return
-        }
-
-        let nextConfig =  QueryConfig.init(starttime: config.starttime,
-                                       endtime: config.endtime,
-                                       offset: config.offset + pagesize,
-                                       limit: config.limit)
-        isRefreshing = true
-        requestRemoteData(config: nextConfig) { [weak self] result in
-            guard let self = self else { return }
-            self.isRefreshing = false
-            switch result {
-            case .success(let response):
-                self.config = nextConfig
-                let mergedResponse = self.mergeEarthquakesResponse(newResponse: response)
-                self.response = mergedResponse
-                completion(.success(mergedResponse))
-            case .failure(let error):
-                completion(.failure(error))
+    @MainActor
+    func requestNextPageRemoteData() async throws -> EarthquakesResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            Task.init {
+                do {
+                    guard isRefreshing == false else { throw "Some fetching is running"}
+                    guard let config = config,
+                          let limit = response?.metadata?.limit,
+                          let count = response?.metadata?.count,
+                          limit == count else {
+                        throw NetworkError.queryCondition
+                    }
+                    
+                    let nextConfig =  QueryConfig.init(starttime: config.starttime,
+                                                       endtime: config.endtime,
+                                                       offset: config.offset + pagesize,
+                                                       limit: config.limit)
+                    isRefreshing = true
+                    let response = try await requestRemoteData(config: config)
+                    self.isRefreshing = false
+                    self.config = nextConfig
+                    let mergedResponse = self.mergeEarthquakesResponse(newResponse: response)
+                    self.response = mergedResponse
+                    continuation.resume(with: .success(mergedResponse))
+                }catch let error {
+                    continuation.resume(with: .failure(error))
+                }
             }
         }
     }
@@ -107,18 +110,20 @@ extension EarthquakesListViewModelRemoteDataProvider {
     }
     
     // request remove data
-    private func requestRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void) {
-        let request = QueryRequest.init(config: config)
-        networkService.queryResults(request: request)
+    private func requestRemoteData(config: QueryConfig) async throws -> EarthquakesResponse {
+        return try await withCheckedThrowingContinuation { continuation in
+            let request = QueryRequest.init(config: config)
+            networkService.queryResults(request: request)
             .subscribe(Subscribers.Sink.init(receiveCompletion: { completionResult in
                 switch completionResult {
                 case .finished:
                     break
                 case .failure(let error):
-                    completion(.failure(error))
+                    continuation.resume(with: .failure(error))
                 }
             }, receiveValue: { response in
-                completion(.success(response))
+                continuation.resume(with: .success(response))
             }))
+        }
     }
 }
