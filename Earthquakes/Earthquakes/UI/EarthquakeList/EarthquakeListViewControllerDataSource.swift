@@ -7,7 +7,11 @@
 
 import UIKit
 
-class EarthquakeListViewControllerDataSource: NSObject {
+protocol DataUpdatable {
+    func updateDataModels()
+}
+
+class EarthquakeListViewControllerDataSource: NSObject{
     
     let dataModelProvider: EarthquakeCollectionViewDataModelProvider
     
@@ -16,7 +20,9 @@ class EarthquakeListViewControllerDataSource: NSObject {
     init(_ dataModelProvider: EarthquakeCollectionViewDataModelProvider) {
         self.dataModelProvider = dataModelProvider
     }
-    
+}
+
+extension EarthquakeListViewControllerDataSource: DataUpdatable {
     func updateDataModels() {
         dataModels = dataModelProvider.dataModels
     }

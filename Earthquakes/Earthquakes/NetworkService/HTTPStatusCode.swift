@@ -13,3 +13,9 @@ enum HTTPStatusCode: Int {
     //4xx client errors
     case notFound = 404
 }
+
+enum HTTPError: String, Error {
+    case invalidResponse
+    case invalidStatusCode
+    case noData
+}

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 let pagesize: UInt = 10
 
@@ -18,6 +19,8 @@ class EarthquakesListViewModelRemoteDataProvider {
     var isRefreshing = false
     
     let networkService: Service
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init(_ networkService: Service = NetworkService.instance) {
         self.networkService = networkService
@@ -105,18 +108,19 @@ extension EarthquakesListViewModelRemoteDataProvider {
         return res
     }
     
-    // request remove data 
+    // request remove data
     private func requestRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void) {
         let request = QueryRequest.init(config: config)
-        self.networkService.queryResults(request: request) { (_ result: Result<EarthquakesResponse, Error>) in
-            switch result {
-            case .success(let resposne):
-                completion(.success(resposne))
-            case .failure(let error):
-                completion(.failure(error))
-                print(error)
-            }
-        }
+        networkService.queryResults(request: request)
+            .sink(receiveCompletion: { completionResult in
+                switch completionResult {
+                case .finished:
+                    break
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }, receiveValue: {response in
+                completion(.success(response))
+            }).store(in: &cancellables)
     }
-    
 }

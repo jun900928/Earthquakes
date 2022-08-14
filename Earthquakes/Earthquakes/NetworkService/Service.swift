@@ -6,9 +6,8 @@
 //
 
 import Foundation
+import Combine
+
 protocol Service {
-    
-    func queryResults<T: Decodable>(request: Request, completion: @escaping (Result<T, Error>) -> Void)
-    
-    func parsing<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void)
+    func queryResults<T: Decodable>(request: Request) -> Future<T, Error>
 }

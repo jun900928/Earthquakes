@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 @testable import Earthquakes
 
@@ -13,6 +14,7 @@ import Foundation
 class MockNetworkService: Service {
     
     private let decoder = JSONDecoder()
+    private var cancellables = Set<AnyCancellable>()
     
     let data: Data?
     let response: HTTPURLResponse?
@@ -24,23 +26,35 @@ class MockNetworkService: Service {
         self.error = error
     }
     
-    func queryResults<T: Decodable>(request: Request, completion: @escaping (Result<T, Error>) -> Void) {
-        parsing(data: data, response: response, error: error, completion: completion)
-    }
-    
-    func parsing<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let data = data,
-            let response = response as? HTTPURLResponse,
-              response.statusCode == HTTPStatusCode.ok.rawValue else {
-            completion(.failure(NetworkError.serverError))
-            return
-        }
-        do {
-            let response = try self.decoder.decode(T.self, from: data)
-            completion(.success(response))
-        } catch {
-            print(error)
-            completion(.failure(NetworkError.decodeFail))
+    func queryResults<T: Decodable>(request: Request) -> Future<T, Error> {
+        return Future<T, Error>{[weak self] promise in
+            guard let _ = request.requestUrl(), let self = self else {
+                return promise(.failure(NetworkError.badURL))
+            }
+            
+            guard let response = self.response,
+                    200...299 ~= response.statusCode else {
+                return promise(.failure(HTTPError.invalidStatusCode))
+            }
+            
+            self.data.publisher
+                .tryMap({ data -> T in
+                    guard let decodeData = try? self.decoder.decode(T.self, from: data) else {
+                        throw NetworkError.decodeFail
+                    }
+                    return decodeData
+                })
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { completionStatus in
+                    switch completionStatus{
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                }, receiveValue: { response in
+                    promise(.success(response))
+                }).store(in: &self.cancellables)
         }
     }
 }

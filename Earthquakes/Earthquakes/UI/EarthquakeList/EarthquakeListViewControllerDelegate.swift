@@ -35,7 +35,10 @@ extension EarthquakeListCollectionViewDelegateFlowLayout: UICollectionViewDelega
                 guard let self = self else { return }
                 switch result {
                 case .success(_):
-                    collectionView.reloadData()
+                    if let dataSource = collectionView.dataSource as? DataUpdatable {
+                        dataSource.updateDataModels()
+                        collectionView.reloadData()
+                    }
                 case.failure(let error):
                     self.coordinator?.errorHandling(error, on: collectionView.superview)
                 }

@@ -52,7 +52,7 @@ class EarthquakeListViewController: UIViewController {
         return delegate
     }()
     
-    lazy var collectionViewDataSource: EarthquakeListViewControllerDataSource = {
+    lazy var collectionViewDataSource: EarthquakeListViewControllerDataSource & DataUpdatable = {
         let ds = EarthquakeListViewControllerDataSource(dataModelProvider)
         return ds
     }()

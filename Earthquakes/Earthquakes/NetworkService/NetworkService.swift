@@ -6,15 +6,18 @@
 //
 
 import Foundation
+import Combine
 
-fileprivate let timeoutIntervalForRequest = 5.0
+fileprivate let timeoutIntervalForRequest = 15.0
 
 class NetworkService: Service {
     static let instance = NetworkService()
     var dataTask: URLSessionDataTask?
     
     private let defaultSession: URLSession
+    private let queue = DispatchQueue.global()
     private let decoder = JSONDecoder()
+    private var cancellables = Set<AnyCancellable>()
 
     private init() {
         let sessionConfig = URLSessionConfiguration.default
@@ -24,37 +27,40 @@ class NetworkService: Service {
         self.defaultSession = session
     }
     
-
-    func queryResults<T: Decodable>(request: Request, completion: @escaping (Result<T, Error>) -> Void) {
-        dataTask?.cancel()
-        guard let url = request.requestUrl() else {
-            completion(.failure(NetworkError.badURL))
-            return
-        }
-        dataTask = defaultSession.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
-            guard let self = self else {return}
-            defer { self.dataTask = nil }
-            DispatchQueue.main.async {
-                self.parsing(data: data, response: response, error: error, completion: completion)
+    func queryResults<T: Decodable>(request: Request) -> Future<T, Error> {
+        return Future<T, Error>{[weak self] promise in
+            guard let url = request.requestUrl(), let self = self else {
+                promise(.failure(NetworkError.badURL))
+                return
             }
-        })
-        dataTask?.resume()
-    }
-    
-
-    func parsing<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void){
-        guard let data = data,
-            let response = response as? HTTPURLResponse,
-              response.statusCode == HTTPStatusCode.ok.rawValue else {
-            completion(.failure(NetworkError.serverError))
-            return
-        }
-        do {
-            let response = try self.decoder.decode(T.self, from: data)
-            completion(.success(response))
-        } catch {
-            print(error)
-            completion(.failure(NetworkError.decodeFail))
+            let dataTaskPublisher = self.defaultSession.dataTaskPublisher(for: url)
+                .tryMap { (data: Data, response: URLResponse) in
+                    guard let httpResponse = response as? HTTPURLResponse,
+                            200...299 ~= httpResponse.statusCode else {
+                        throw HTTPError.invalidStatusCode
+                    }
+                    return data
+                }
+                .decode(type: T.self, decoder: self.decoder)
+                .receive(on: RunLoop.main)
+            dataTaskPublisher
+                .sink(receiveCompletion: {completion in
+                    switch completion {
+                    case .finished:
+                        print(#function + ": Finished")
+                    case .failure(let error):
+                        switch error {
+                        case let decodingError as DecodingError:
+                            promise(.failure(decodingError))
+                        case let networkError as NetworkError:
+                            promise(.failure(networkError))
+                        default:
+                            promise(.failure(error))
+                        }
+                    }
+                }, receiveValue: { response in
+                    promise(.success(response))
+                }).store(in: &self.cancellables)
         }
     }
 }

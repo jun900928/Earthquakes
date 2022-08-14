@@ -7,7 +7,7 @@
 
 import Foundation
 enum NetworkError: Error {
-    case badURL, serverError, decodeFail, queryCondition
+    case badURL, serverError, decodeFail, queryCondition, unknown
     
     var localizedDescription: String {
         switch self {
@@ -15,6 +15,7 @@ enum NetworkError: Error {
         case .serverError: return "An error occured while connecting server"
         case .decodeFail: return "An error occured while parsing the JSON response"
         case .queryCondition: return "An error occured while generate query condition"
+        case .unknown: return "An unknown error occured while request data"
         }
     }
 }
