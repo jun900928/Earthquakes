@@ -15,12 +15,12 @@ class EarthquakesListRemoteDataProviderTestTests: XCTestCase {
         let remoteDataProvider = EarthquakesListViewModelRemoteDataProvider(mockService)
         let exp = expectation(description: "Loading URL")
         let config = QueryConfig.init(starttime: "2014-01-01", endtime: "2014-02-01")
-        remoteDataProvider.refreshRemoteData(config: config) { result in
-            switch result {
-            case .success(let response):
+        Task.init {
+            do {
+                let response = try await remoteDataProvider.refreshRemoteData(config: config)
                 XCTAssertNotNil(response.features)
                 XCTAssertTrue(response.features!.count == pagesize)
-            case .failure(let error):
+            } catch let error {
                 XCTAssertTrue(false, error.localizedDescription)
             }
             exp.fulfill()
@@ -33,13 +33,13 @@ class EarthquakesListRemoteDataProviderTestTests: XCTestCase {
         let remoteDataProvider = EarthquakesListViewModelRemoteDataProvider(mockService)
         let exp = expectation(description: "Loading URL")
         let config = QueryConfig.init(starttime: "2014-01-01", endtime: "2014-02-01")
-        remoteDataProvider.refreshRemoteData(config: config) { result in
-            switch result {
-            case .success(let response):
+        Task.init {
+            do {
+                let response = try await remoteDataProvider.refreshRemoteData(config: config)
                 XCTAssertNil(response.features)
                 XCTAssertNil(response.metadata)
                 XCTAssertNil(response.type)
-            case .failure(let error):
+            } catch let error {
                 XCTAssertTrue(false, error.localizedDescription)
             }
             exp.fulfill()
@@ -52,11 +52,11 @@ class EarthquakesListRemoteDataProviderTestTests: XCTestCase {
         let remoteDataProvider = EarthquakesListViewModelRemoteDataProvider(mockService)
         let exp = expectation(description: "Loading URL")
         let config = QueryConfig.init(starttime: "2014-01-01", endtime: "2014-02-01")
-        remoteDataProvider.refreshRemoteData(config: config) { result in
-            switch result {
-            case .success(_):
+        Task.init {
+            do {
+                let _ = try await remoteDataProvider.refreshRemoteData(config: config)
                 XCTAssertTrue(false)
-            case .failure(let error):
+            } catch let error {
                 XCTAssertTrue(error as? NetworkError == NetworkError.decodeFail)
             }
             exp.fulfill()
