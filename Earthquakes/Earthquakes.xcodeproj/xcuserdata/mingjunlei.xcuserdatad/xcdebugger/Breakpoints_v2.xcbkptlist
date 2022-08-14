@@ -317,22 +317,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "94F3D474-B692-4AF5-8AFF-AF6E3018618A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "requestNextPageRemoteData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "004C8561-9E44-4CAD-9F3D-14A8447A97D4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -343,6 +327,164 @@
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "errorHandling(_:on:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76C78FD5-72A6-48E7-941F-CE0AD76C5837"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "refreshRemoteData(config:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76C78FD5-72A6-48E7-941F-CE0AD76C5837 - 48955bef763ccf80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "231">
+               </Location>
+               <Location
+                  uuid = "76C78FD5-72A6-48E7-941F-CE0AD76C5837 - 1eb827144a1f4db1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "76C78FD5-72A6-48E7-941F-CE0AD76C5837 - 979333623883b1bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "76C78FD5-72A6-48E7-941F-CE0AD76C5837 - 712fe7d2544e4e95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "62">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FBD085C-660C-4134-9F5E-A2FB7D479F93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "refreshRemoteData(config:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7FBD085C-660C-4134-9F5E-A2FB7D479F93 - 979333623883b2e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "149">
+               </Location>
+               <Location
+                  uuid = "7FBD085C-660C-4134-9F5E-A2FB7D479F93 - 712fe7d2544e4dc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for Earthquakes.EarthquakesListViewModelRemoteDataProvider.refreshRemoteData(config: Earthquakes.QueryConfig) async throws -&gt; Earthquakes.EarthquakesResponse"
+                  moduleName = "Earthquakes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "149">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85D36ACE-0E4E-412D-B5E5-B573A153A82F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "requestNextPageRemoteData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D423FFA7-D1B4-4656-A79D-B3B582508F5F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "requestNextPageRemoteData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

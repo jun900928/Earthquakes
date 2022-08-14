@@ -54,7 +54,7 @@ class EarthquakesListRemoteDataProviderTestTests: XCTestCase {
         let config = QueryConfig.init(starttime: "2014-01-01", endtime: "2014-02-01")
         Task.init {
             do {
-                let _ = try await remoteDataProvider.refreshRemoteData(config: config)
+                async let _ = try await remoteDataProvider.refreshRemoteData(config: config)
                 XCTAssertTrue(false)
             } catch let error {
                 XCTAssertTrue(error as? NetworkError == NetworkError.decodeFail)
