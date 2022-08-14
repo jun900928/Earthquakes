@@ -14,7 +14,6 @@ import Combine
 class MockNetworkService: Service {
     
     private let decoder = JSONDecoder()
-    private var cancellables = Set<AnyCancellable>()
     
     let data: Data?
     let response: HTTPURLResponse?
@@ -38,23 +37,23 @@ class MockNetworkService: Service {
             }
             
             self.data.publisher
-                .tryMap({ data -> T in
-                    guard let decodeData = try? self.decoder.decode(T.self, from: data) else {
-                        throw NetworkError.decodeFail
-                    }
-                    return decodeData
-                })
-                .receive(on: RunLoop.main)
-                .sink(receiveCompletion: { completionStatus in
-                    switch completionStatus{
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        promise(.failure(error))
-                    }
-                }, receiveValue: { response in
-                    promise(.success(response))
-                }).store(in: &self.cancellables)
+            .tryMap({ data -> T in
+                guard let decodeData = try? self.decoder.decode(T.self, from: data) else {
+                    throw NetworkError.decodeFail
+                }
+                return decodeData
+            })
+            .receive(on: DispatchQueue.main)
+            .subscribe(Subscribers.Sink(receiveCompletion: { completionStatus in
+                switch completionStatus{
+                case .finished:
+                    break
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+            }, receiveValue: { response in
+                promise(.success(response))
+            }))
         }
     }
 }

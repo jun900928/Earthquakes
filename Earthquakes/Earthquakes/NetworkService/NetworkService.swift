@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-fileprivate let timeoutIntervalForRequest = 15.0
+fileprivate let timeoutIntervalForRequest = 5.0
 
 class NetworkService: Service {
     static let instance = NetworkService()
@@ -17,7 +17,6 @@ class NetworkService: Service {
     private let defaultSession: URLSession
     private let queue = DispatchQueue.global()
     private let decoder = JSONDecoder()
-    private var cancellables = Set<AnyCancellable>()
 
     private init() {
         let sessionConfig = URLSessionConfiguration.default
@@ -43,24 +42,23 @@ class NetworkService: Service {
                 }
                 .decode(type: T.self, decoder: self.decoder)
                 .receive(on: RunLoop.main)
-            dataTaskPublisher
-                .sink(receiveCompletion: {completion in
-                    switch completion {
-                    case .finished:
-                        print(#function + ": Finished")
-                    case .failure(let error):
-                        switch error {
-                        case let decodingError as DecodingError:
-                            promise(.failure(decodingError))
-                        case let networkError as NetworkError:
-                            promise(.failure(networkError))
-                        default:
-                            promise(.failure(error))
-                        }
+            dataTaskPublisher.subscribe(Subscribers.Sink.init(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print(#function + ": Finished")
+                case .failure(let error):
+                    switch error {
+                    case let decodingError as DecodingError:
+                        promise(.failure(decodingError))
+                    case let networkError as NetworkError:
+                        promise(.failure(networkError))
+                    default:
+                        promise(.failure(error))
                     }
-                }, receiveValue: { response in
-                    promise(.success(response))
-                }).store(in: &self.cancellables)
+                }
+            }, receiveValue: { response in
+                promise(.success(response))
+            }))
         }
     }
 }

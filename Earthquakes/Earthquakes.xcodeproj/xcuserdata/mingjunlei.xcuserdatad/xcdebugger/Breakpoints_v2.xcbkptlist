@@ -19,240 +19,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9AF76527-4AB3-4404-8563-8249C3257E04"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "queryResults(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9AF76527-4AB3-4404-8563-8249C3257E04 - 351423fb19d263e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "185">
-               </Location>
-               <Location
-                  uuid = "9AF76527-4AB3-4404-8563-8249C3257E04 - 351423fb19d26381"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "171">
-               </Location>
-               <Location
-                  uuid = "9AF76527-4AB3-4404-8563-8249C3257E04 - 351423fb19d263a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "171">
-               </Location>
-               <Location
-                  uuid = "9AF76527-4AB3-4404-8563-8249C3257E04 - 351423fb19d26047"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "171">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E26226B2-DF9C-485A-99BF-958FBD111CAF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "queryResults(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E26226B2-DF9C-485A-99BF-958FBD111CAF - 351423fb19d2637d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "285">
-               </Location>
-               <Location
-                  uuid = "E26226B2-DF9C-485A-99BF-958FBD111CAF - 351423fb19d263c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "198">
-               </Location>
-               <Location
-                  uuid = "E26226B2-DF9C-485A-99BF-958FBD111CAF - 351423fb19d263e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "198">
-               </Location>
-               <Location
-                  uuid = "E26226B2-DF9C-485A-99BF-958FBD111CAF - 351423fb19d26381"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "198">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "987AC3E8-D6D0-4785-8669-B2EDF21B4005"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "queryResults(request:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "987AC3E8-D6D0-4785-8669-B2EDF21B4005 - 164f97896399d87f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "1853">
-               </Location>
-               <Location
-                  uuid = "987AC3E8-D6D0-4785-8669-B2EDF21B4005 - 7a891ab147be0eab"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (&#x3c4;_0_0) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "176">
-               </Location>
-               <Location
-                  uuid = "987AC3E8-D6D0-4785-8669-B2EDF21B4005 - 7a891ab147be0e88"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (&#x3c4;_0_0) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "176">
-               </Location>
-               <Location
-                  uuid = "987AC3E8-D6D0-4785-8669-B2EDF21B4005 - 7a891ab147be0ee9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (&#x3c4;_0_0) -&gt; () in closure #1 ((Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; () in EarthquakesTests.MockNetworkService.queryResults&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Earthquakes.Request) -&gt; Combine.Future&lt;&#x3c4;_0_0, Swift.Error&gt;"
-                  moduleName = "EarthquakesTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mingjunlei/Documents/GitHub/Earthquakes/Earthquakes/EarthquakesTests/Mock/MockNetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "176">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9F5217EB-6A1E-41B4-BC09-D4FC71A8C3A8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -292,8 +58,8 @@
             filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "queryResults(request:)"
             landmarkType = "7">
             <Locations>
@@ -370,8 +136,8 @@
             filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "queryResults(request:)"
             landmarkType = "7">
             <Locations>
@@ -456,22 +222,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6B8D0AB7-85C5-4396-B814-DE3405CED513"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "requestRemoteData(config:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "00B36E2E-16BD-4C17-966B-267FBCC3FAAD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -479,25 +229,9 @@
             filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "refreshRemoteData(config:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2B5A6BF3-7449-40CF-A6EF-7061594A4940"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "requestRemoteData(config:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -511,8 +245,8 @@
             filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "refreshRemoteData(config:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -527,8 +261,8 @@
             filePath = "Earthquakes/NetworkService/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "queryResults(request:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -543,8 +277,8 @@
             filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "queryResults(request:)"
             landmarkType = "7">
             <Locations>
@@ -606,8 +340,8 @@
             filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "queryResults(request:)"
             landmarkType = "7">
             <Locations>
@@ -654,25 +388,9 @@
             filePath = "EarthquakesTests/Mock/MockNetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "queryResults(request:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A435F2B0-28A4-4C2D-B605-73F2FA85D991"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Earthquakes/Data/DataProvider/EarthquakesListViewModelRemoteDataProvider.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "requestRemoteData(config:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

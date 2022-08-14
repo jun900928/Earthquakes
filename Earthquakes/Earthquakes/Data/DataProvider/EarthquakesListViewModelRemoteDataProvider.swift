@@ -20,8 +20,6 @@ class EarthquakesListViewModelRemoteDataProvider {
     
     let networkService: Service
     
-    private var cancellables = Set<AnyCancellable>()
-    
     init(_ networkService: Service = NetworkService.instance) {
         self.networkService = networkService
     }
@@ -112,15 +110,15 @@ extension EarthquakesListViewModelRemoteDataProvider {
     private func requestRemoteData(config: QueryConfig, completion: @escaping (EarthquakesResponseResult) -> Void) {
         let request = QueryRequest.init(config: config)
         networkService.queryResults(request: request)
-            .sink(receiveCompletion: { completionResult in
+            .subscribe(Subscribers.Sink.init(receiveCompletion: { completionResult in
                 switch completionResult {
                 case .finished:
                     break
                 case .failure(let error):
                     completion(.failure(error))
                 }
-            }, receiveValue: {response in
+            }, receiveValue: { response in
                 completion(.success(response))
-            }).store(in: &cancellables)
+            }))
     }
 }
